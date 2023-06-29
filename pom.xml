@@ -63,6 +63,27 @@
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.5</version>
+        <executions>
+          <execution>
+            <!-- id придумываем сами -->
+            <id>jacoco-id-for-logs(prepare-agent)</id>
+            <phase>initialize</phase>
+            <goals>
+              <!-- какую цель выполняем (берем из справки). Отслеживает вызовы кода -->
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <!-- id придумываем сами -->
+            <id>report</id>
+            <phase>verify</phase>
+            <goals>
+              <!-- Какую цель выполняем (берем из справвки). Генерирует отчет-->
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+
       </plugin>
 
 
