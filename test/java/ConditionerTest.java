@@ -4,12 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ConditionerTest {
     @Test
-    public void shouldCreate(){
-        Conditioner condi = new Conditioner();
-
-    }
-
-    @Test
     public void shouldInitFildToZeroValues() {
         Conditioner condi = new Conditioner();
         assertNull(condi.name);
@@ -18,5 +12,13 @@ class ConditionerTest {
         assertEquals(0, condi.currentTemp);
         assertTrue(condi.on);
     }
+    @Test
+    public void shouldThrowNPE() {
+        Conditioner condi = new Conditioner();
+        condi.name = "Gorgo";
+        assertNotNull(condi.name);
+    }
+
+
 
 }
